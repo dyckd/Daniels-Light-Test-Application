@@ -1,0 +1,7 @@
+C:\Users\DDyck\documents\visual studio 2010\Projects\Daniels_LightTestApplication\Daniels_LightTestApplication\bin\Debug\Daniels_LightTestApplication.exe
+C:\Users\DDyck\documents\visual studio 2010\Projects\Daniels_LightTestApplication\Daniels_LightTestApplication\bin\Debug\Daniels_LightTestApplication.pdb
+C:\Users\DDyck\documents\visual studio 2010\Projects\Daniels_LightTestApplication\Daniels_LightTestApplication\obj\x86\Debug\Daniels_LightTestApplication.MainForm.resources
+C:\Users\DDyck\documents\visual studio 2010\Projects\Daniels_LightTestApplication\Daniels_LightTestApplication\obj\x86\Debug\Daniels_LightTestApplication.Properties.Resources.resources
+C:\Users\DDyck\documents\visual studio 2010\Projects\Daniels_LightTestApplication\Daniels_LightTestApplication\obj\x86\Debug\Daniels_LightTestApplication.csproj.GenerateResource.Cache
+C:\Users\DDyck\documents\visual studio 2010\Projects\Daniels_LightTestApplication\Daniels_LightTestApplication\obj\x86\Debug\Daniels_LightTestApplication.exe
+C:\Users\DDyck\documents\visual studio 2010\Projects\Daniels_LightTestApplication\Daniels_LightTestApplication\obj\x86\Debug\Daniels_LightTestApplication.pdb
