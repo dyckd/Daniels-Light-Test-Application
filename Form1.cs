@@ -11,12 +11,16 @@
 // 6/17/16 : Hastily tried to achieve multithreading - broke code
 // 6/20/16 : Fixed code... removed multithreading... had to disable visual studio hosting process
 //          http://stackoverflow.com/questions/2690119/visualstudio2010-debugging-the-process-cannot-access-the-file-because-it-i
-//
+//         : Added in Coordinate Search Function
 //
 //
 // TO ADD:
 // 1.0 ) Abort button during run test
+//
+//
+// WORK IN PROGRESS: 
 // 1.1 ) Coordinate Search function
+//       - Reconcile with Stuart that degree input is intutive. 
 
 using System;
 using System.Threading;
@@ -195,7 +199,7 @@ namespace Daniels_LightTestApplication
             comport7_interior.Close();
             comport8_exterior.Close();
             comport2_lightsensor.Close();
-            Output.AppendText("You have closed the COM ports\n");
+            Output.AppendText("You have closed the COM ports \n");
             return;
         }
 
@@ -326,6 +330,30 @@ namespace Daniels_LightTestApplication
                 // manually reverse mount direction
                 // repeat the whole double for loop
         
-        }     
+        }
+
+        private void goto_btn_Click(object sender, EventArgs e)
+        {
+            if (!comport7_interior.IsOpen && !comport8_exterior.IsOpen)
+            {
+                Output.AppendText("You have not opened the COM ports yet!\n");
+            }
+            else
+            {
+                // convert input deg to 
+                int xsteps = int.Parse(xdeg_txt.Text) * (12800/360) *(-1); // -1 to reverse direction so intutive right = positive is true.
+                int ysteps = int.Parse(ydeg_txt.Text) * (12800/360) *(-1);
+
+                string xsteps_string = "@1P" + xsteps + "\r";
+                string ysteps_string = "@0P" + ysteps + "\r";
+
+                comport7_interior.Write(xsteps_string);
+                comport7_interior.Write("@1G\r");
+                comport8_exterior.Write(ysteps_string);
+                comport8_exterior.Write("@0G\r");
+
+                Output.AppendText("Homing to " + xdeg_txt.Text + "," + ydeg_txt.Text + "\n");
+            }
+        }
     }
 }
