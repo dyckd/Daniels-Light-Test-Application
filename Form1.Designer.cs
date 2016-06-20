@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -38,11 +38,12 @@
             this.lightsensor_parity_db = new System.Windows.Forms.ComboBox();
             this.comport_dc = new System.Windows.Forms.Button();
             this.lft_btn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.right_btn = new System.Windows.Forms.Button();
             this.up_btn = new System.Windows.Forms.Button();
             this.dwn_btn = new System.Windows.Forms.Button();
             this.home_btn = new System.Windows.Forms.Button();
             this.connect_btn = new System.Windows.Forms.Button();
+            this.Output = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_runtest
@@ -146,25 +147,27 @@
             // lft_btn
             // 
             this.lft_btn.Image = global::Daniels_LightTestApplication.Properties.Resources.lft_arrow;
-            this.lft_btn.Location = new System.Drawing.Point(230, 44);
+            this.lft_btn.Location = new System.Drawing.Point(248, 67);
             this.lft_btn.Name = "lft_btn";
             this.lft_btn.Size = new System.Drawing.Size(37, 37);
             this.lft_btn.TabIndex = 12;
             this.lft_btn.UseVisualStyleBackColor = true;
+            this.lft_btn.Click += new System.EventHandler(this.lft_btn_Click);
             // 
-            // button2
+            // right_btn
             // 
-            this.button2.Image = global::Daniels_LightTestApplication.Properties.Resources.rght_arrow;
-            this.button2.Location = new System.Drawing.Point(337, 44);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(37, 37);
-            this.button2.TabIndex = 11;
-            this.button2.UseVisualStyleBackColor = true;
+            this.right_btn.Image = global::Daniels_LightTestApplication.Properties.Resources.rght_arrow;
+            this.right_btn.Location = new System.Drawing.Point(355, 67);
+            this.right_btn.Name = "right_btn";
+            this.right_btn.Size = new System.Drawing.Size(37, 37);
+            this.right_btn.TabIndex = 11;
+            this.right_btn.UseVisualStyleBackColor = true;
+            this.right_btn.Click += new System.EventHandler(this.right_btn_Click);
             // 
             // up_btn
             // 
             this.up_btn.Image = global::Daniels_LightTestApplication.Properties.Resources.up_arrow1;
-            this.up_btn.Location = new System.Drawing.Point(283, 3);
+            this.up_btn.Location = new System.Drawing.Point(301, 26);
             this.up_btn.Name = "up_btn";
             this.up_btn.Size = new System.Drawing.Size(37, 37);
             this.up_btn.TabIndex = 10;
@@ -174,7 +177,7 @@
             // dwn_btn
             // 
             this.dwn_btn.Image = ((System.Drawing.Image)(resources.GetObject("dwn_btn.Image")));
-            this.dwn_btn.Location = new System.Drawing.Point(283, 84);
+            this.dwn_btn.Location = new System.Drawing.Point(301, 110);
             this.dwn_btn.Name = "dwn_btn";
             this.dwn_btn.Size = new System.Drawing.Size(37, 37);
             this.dwn_btn.TabIndex = 9;
@@ -183,7 +186,7 @@
             // 
             // home_btn
             // 
-            this.home_btn.Location = new System.Drawing.Point(273, 46);
+            this.home_btn.Location = new System.Drawing.Point(291, 69);
             this.home_btn.Name = "home_btn";
             this.home_btn.Size = new System.Drawing.Size(58, 32);
             this.home_btn.TabIndex = 13;
@@ -200,17 +203,31 @@
             this.connect_btn.TabIndex = 14;
             this.connect_btn.Text = "&Connect";
             this.connect_btn.UseVisualStyleBackColor = false;
+            this.connect_btn.Click += new System.EventHandler(this.connect_btn_Click);
+            // 
+            // Output
+            // 
+            this.Output.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Output.Location = new System.Drawing.Point(12, 186);
+            this.Output.Multiline = true;
+            this.Output.Name = "Output";
+            this.Output.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Output.Size = new System.Drawing.Size(384, 99);
+            this.Output.TabIndex = 15;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(668, 363);
+            this.ClientSize = new System.Drawing.Size(413, 324);
+            this.Controls.Add(this.Output);
             this.Controls.Add(this.connect_btn);
             this.Controls.Add(this.home_btn);
             this.Controls.Add(this.lft_btn);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.right_btn);
             this.Controls.Add(this.up_btn);
             this.Controls.Add(this.dwn_btn);
             this.Controls.Add(this.comport_dc);
@@ -241,10 +258,13 @@
         private System.Windows.Forms.Button comport_dc;
         private System.Windows.Forms.Button dwn_btn;
         private System.Windows.Forms.Button up_btn;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button right_btn;
         private System.Windows.Forms.Button lft_btn;
         private System.Windows.Forms.Button home_btn;
         private System.Windows.Forms.Button connect_btn;
+        private System.Windows.Forms.TextBox Output;
+
+        public System.EventHandler abort_btn_Click { get; set; }
     }
 }
 
